@@ -1,0 +1,33 @@
+{
+  "deal_context": {
+    "role": "Vendor (SaaS Provider)",
+    "annual_contract_value_usd": 120000,
+    "counterparty_tier": "Enterprise"
+  },
+  "rules": [
+    {
+      "id": "PAYMENT_TERMS",
+      "standard_position": "Net 30 days from invoice receipt.",
+      "acceptable_fallback": "Net 45 days is acceptable without edits for Enterprise tier.",
+      "escalation_trigger": "Net 90 days or longer requires CFO approval; do not auto-edit, escalate."
+    },
+    {
+      "id": "LIABILITY_CAP",
+      "standard_position": "Capped at 12 months of fees paid preceding the claim.",
+      "acceptable_fallback": "24 months of fees paid is acceptable.",
+      "escalation_trigger": "Uncapped liability or nominal caps under $1,000 must be redlined to 12 months of fees paid."
+    },
+    {
+      "id": "INDEMNIFICATION",
+      "standard_position": "Mutual indemnification capped at the Agreement's Limitation of Liability.",
+      "acceptable_fallback": "Uncapped IP infringement indemnity only if mutual and subject to standard exclusions.",
+      "escalation_trigger": "Broad, uncapped third-party indemnification with unlimited liability requires General Counsel sign-off; escalate immediately."
+    },
+    {
+      "id": "GOVERNING_LAW",
+      "standard_position": "State of California, venue in San Francisco County.",
+      "acceptable_fallback": "State of Delaware or State of New York.",
+      "escalation_trigger": "Any other jurisdiction must be redlined to California / San Francisco."
+    }
+  ]
+}
